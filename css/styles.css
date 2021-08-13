@@ -1,10 +1,15 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 html,
 body {
   position: relative;
+}
+
+img {
+  width: 100%;
 }
 
 body {
@@ -18,6 +23,10 @@ input:focus {
 a {
   color: inherit !important;
   text-decoration: none !important;
+}
+
+li {
+  list-style: none;
 }
 footer {
   background: #f1f1f1;
@@ -47,32 +56,54 @@ footer {
 /* Layout page CSS */
 /* ================================== */
 
+.grid-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0.4rem;
+}
+
 .tile {
   /* TODO: MODULE_CARDS */
+  height: 300px;
   /* 1. Fill in the required properties. */
 }
 .tile img {
   /* TODO: MODULE_CARDS */
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
   /* 1. Fill in the required properties. */
 }
 .tile img:hover {
   /* TODO: MODULE_CARDS */
+  filter: brightness(60%);
   /* 1. Fill in the required properties. */
 }
 
 /* Hint: Notice the position:absolute and z-index properties. */
 /* Think about how those in relation to the existing "tile" classes. */
 .tile-text {
+  color: #f1f1f1;
   position: absolute;
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  bottom: 60px;
 }
 
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/assets/hero.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/hero.jpg") no-repeat center center / cover;
+  height: 50vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
 
   /* TODO: MODULE_LAYOUT */
   /* 1. Set a specific height. */
@@ -80,15 +111,24 @@ footer {
 }
 
 .hero-subheading {
+  color: white;
   font-size: 24px;
   font-weight: 100;
+  text-align: center;
 }
+
 .hero-input {
-  width: 80%;
-  height: 50px;
+  width: 50%;
+}
+
+.hero-input input {
+  display: block;
+  width: 100%;
+  height: 3rem;
   padding: 16px;
   border-radius: 8px;
   border: none;
+  text-align: center;
 }
 
 .nav-link {
@@ -102,13 +142,27 @@ footer {
 .adventure-card {
   /* TODO: MODULE_ADVENTURES_GRID */
   /* 1. Fill in the required properties. */
+  height: 230px;
+  border: solid 1px lightgrey;
+  border-radius: 5px;
 }
 .adventure-card img {
+  width: 100%;
+  height: 85%;
   /* TODO: MODULE_ADVENTURES_GRID */
   /* 1. Fill in the required properties. */
 }
+
+.adventure-card .adventure-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.2rem;
+  align-items: center;
+}
+
 .adventure-card img:hover {
   /* TODO: MODULE_ADVENTURES_GRID */
+  filter: brightness(60%);
   /* 1. Fill in the required properties. */
 }
 
@@ -116,20 +170,63 @@ footer {
 /* Adventure details page CSS */
 /* ================================== */
 
+.content {
+  overflow: hidden;
+  display: flex;
+}
+
+.left-content {
+  width: 60%;
+}
+
+.left-content,
+.right-text {
+  padding: 1rem;
+  border: lightgray 1px solid;
+  border-radius: 5px;
+}
+
+.list-style > li {
+  list-style: circle;
+  list-style-position: inside;
+}
 .adventure-detail-card {
   /* TODO: MODULE_ADVENTURE_DETAILS */
   /* 1. Fill in the required properties. */
-
 }
 
 .adventure-card-image {
+  display: grid;
+  grid-template-areas:
+    "img1 img1 img2"
+    "img1 img1 img3";
+  gap: 1rem;
+}
+
+.img-left {
+  grid-area: img1;
+  height: 100%;
+}
+
+.img-right img:first-child {
+  grid-area: img2;
+}
+
+.img-right img:last-child {
+  grid-area: img3;
+}
+
+.adventure-card-image > img:hover {
   /* TODO: MODULE_ADVENTURE_DETAILS */
   /* 1. Fill in the required properties. */
+  filter: brightness(60%);
 }
-.adventure-card-image:hover {
-  /* TODO: MODULE_ADVENTURE_DETAILS */
-  /* 1. Fill in the required properties. */
+.adventure-card-heading p {
+  color: #999;
+  padding-bottom: 1rem;
+  border-bottom: rgb(172, 172, 172) solid 1px;
 }
+
 .experience-content ul li {
   margin-left: 16px;
   padding: 0;
@@ -140,5 +237,25 @@ footer {
   #reservation {
     width: 400px;
     position: fixed;
+  }
+}
+
+/* Smartphones */
+
+@media (max-width: 768px) {
+  .grid-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.4rem;
+  }
+  .tile {
+    height: 200px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+  .left-content {
+    width: 100%;
   }
 }

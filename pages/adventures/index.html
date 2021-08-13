@@ -1,48 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QTrip Adventures</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QTrip Adventures</title>
-  <link rel="stylesheet" href="../../css/styles.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">QTrip</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">QTrip</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav d-flex justify-content-end w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/pages/adventures/">Explore</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav d-flex justify-content-end w-100">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home </a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/pages/adventures/">Explore</a>
-        </li>
+    <div class="container my-5">
+      <h2 class="text-center">Explore all adventures</h2>
+      <p class="text-center">
+        Here is a list of adventures that you can explore in the city
+      </p>
+      <div class="grid-items">
+        <!-- TODO: MODULE_ADVENTURES_GRID -->
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/resort.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Resort</li>
+              <li>$100</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/tower.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Tower</li>
+              <li>$50</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/mount.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Skiing</li>
+              <li>$140</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/university.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>University</li>
+              <li>$10</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/market.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Market</li>
+              <li>$1</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/palace.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Monument</li>
+              <li>$100</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/canopy.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Canopy</li>
+              <li>$50</li>
+            </ul>
+          </a>
+        </div>
+        <div class="adventure-card">
+          <a href="/pages/adventures/resort/index.html">
+            <img src="/assets/adventures/beachside.jpg" alt="" />
+            <ul class="adventure-text">
+              <li>Beach</li>
+              <li>$40</li>
+            </ul>
+          </a>
+        </div>
 
-      </ul>
+        <!-- 1. Create the grid of adventures by adding child elements as required. -->
+      </div>
     </div>
-  </nav>
 
-  <div class="container">
-    <div class="content">
-      <!-- TODO: MODULE_ADVENTURES_GRID -->
-      <!-- 1. Create the grid of adventures by adding child elements as required. -->
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">© QTrip 2020</div>
-  </footer>
-  <!-- TODO: MODULE_ADVENTURES_GRID -->
-  <!-- 1. <script> elements need to be added. -->
-</body>
-
+    <footer>
+      <div class="container">© QTrip 2020</div>
+    </footer>
+    <!-- TODO: MODULE_ADVENTURES_GRID -->
+    <!-- 1. <script> elements need to be added. -->
+  </body>
 </html>
